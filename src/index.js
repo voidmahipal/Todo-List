@@ -1,5 +1,8 @@
-import {s} from "./projects.js";
+import {addproject} from "./sidebar.js";
 import "./style.css";
 import "./sidebar-styles.css";
 
-console.log(s);
+const addprojectbtn = document.querySelector(".title button");
+addprojectbtn.addEventListener("click",()=>{
+    addproject();
+})

@@ -55,3 +55,34 @@ body{
     height: 25px;
     fill: white;
 }
+.pcontainer{
+    margin-top: 15px;
+}
+.pcard{
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+.pinfo,.pbuttons{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.pinfo svg{
+    width: 15px;
+    height: 15px;
+    fill: red;
+}
+.pinfo h3{
+    color: #F5F5F7;
+}
+.pbuttons button svg{
+    width: 20px;
+    height: 20px;
+    fill: white;
+}
+.pbuttons button{
+    background-color: #0D1117;
+}
