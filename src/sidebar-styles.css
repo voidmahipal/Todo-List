@@ -1,0 +1,57 @@
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+button{
+    border: 0;
+}
+button:hover{
+    cursor: pointer;
+}
+body{
+    font-family: "Inter",sans-serif;
+    background-color: #10141B;
+}
+.sidebar{
+    width: 20%;
+    height: 100vh;
+    background-color: #0D1117;
+    border: 1px solid #2A2F3A;
+}
+.heading{
+    padding: 10px;
+    display: flex;
+    gap: 15px;
+    border-bottom: 1px solid #2A2F3A;
+}
+.heading svg{
+    width: 30px;
+    height: 30px;
+    fill: purple;
+}
+.heading h1{
+    color: #F5F5F7;
+}
+.sidebar hr{
+    background-color: #2A2F3A;
+}
+.projects{
+    padding: 10px;
+}
+.title{
+    display: flex;
+    justify-content: space-between;
+}
+.projects .title h2{
+    color: #E5E7EB;
+}
+.projects .title button{
+    border-radius: 50%;
+    background-color: #0D1117;
+}
+.projects .title svg{
+    width: 25px;
+    height: 25px;
+    fill: white;
+}
