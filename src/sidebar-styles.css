@@ -86,3 +86,59 @@ body{
 .pbuttons button{
     background-color: #0D1117;
 }
+dialog{
+    padding: 10px;
+    background-color: #171C24;
+    border: 1px solid #2A2F3A;
+    border-radius: 10px;
+    width: 300px;
+    height: 150px;
+    position: fixed;
+    top: 30%;
+    left: 40%;
+}
+dialog::backdrop{
+    background-color: rgba(0,0,0,0.5);
+}
+dialog>button{
+    margin-left: 95%;
+    border: none;
+    color: #9CA3Af;
+    background-color: #171C24;
+}
+dialog>button:hover{
+    color: #F5F5F7;
+}
+dialog form{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+label{
+    color: #F5F5F7;
+}
+input{
+    border: 1px solid #343A46;
+    border-radius: 12px;
+    background-color: #0D1117;
+    color: #F5F5F7;
+    width: 80%;
+    height: 25px;
+}
+input:focus{
+    border: 1px solid #8B4DE8;
+}
+button[type="submit"]{
+    background-color: #8B4DE8;
+    color: #FFFFFF;
+    border: 1px solid #8B4DE8;
+    width: 40%;
+    height: 20px;
+    border: none;
+    border-radius: 12px;
+}
+button[type="submit"]:hover{
+    background-color: #9B5CF0;
+}

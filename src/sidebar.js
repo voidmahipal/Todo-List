@@ -1,6 +1,27 @@
+const colors = ["red","blue","yellow","green","purple","orange","pink","white"];
+let i=0;
+function getColor() {
+    let givecolor=colors[i%7];
+    i++;
+    return givecolor;
+}
+
 const container = document.querySelector(".pcontainer");
 
-function addproject() {
+const addpbtn = document.querySelector(".title button");
+const pdialog = document.querySelector(".addproject");
+const closebtn = document.querySelector(".addproject button");
+const pform = document.querySelector(".addproject");
+const pnameinform = document.querySelector("#pname");
+
+
+const rdialog = document.querySelector(".renameproject");
+const rclosebtn = document.querySelector(".renameproject button");
+const rform = document.querySelector(".renameproject form");
+const rnameinform = document.querySelector("#rname");
+
+
+function addproject(name) {
 
     const card = document.createElement("div");
     card.classList.add("pcard");
@@ -8,8 +29,10 @@ function addproject() {
     const info = document.createElement("div");
     info.classList.add("pinfo");
     info.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>circle</title><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>`;
+    const svg = info.querySelector("svg");
+    svg.style.fill=getColor();
     const h3 = document.createElement("h3");
-    h3.textContent="Work";
+    h3.textContent=`${name}`;
     info.appendChild(h3);
 
     const buttons = document.createElement("div");
@@ -25,5 +48,42 @@ function addproject() {
     card.appendChild(buttons);
 
     container.appendChild(card);
+
+    rename_btn.addEventListener("click",(e)=>{
+        const card = e.currentTarget.closest(".pcard");
+        renameNode=card.querySelector("h3");
+        rdialog.showModal();
+    })
+
+    delete_btn.addEventListener("click",(e)=>{
+        const card = e.currentTarget.closest(".pcard");
+        container.removeChild(card);
+    })
 }
+
+function takeprojname() {
+    pdialog.showModal();
+}
+addpbtn.addEventListener("click",()=>{
+    takeprojname();
+})
+closebtn.addEventListener("click",()=>{
+    pdialog.close();
+})
+pform.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    pdialog.close();
+    addproject(pnameinform.value);
+})
+
+let renameNode;
+rform.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    rdialog.close();
+    renameNode.textContent=rnameinform.value;
+})
+rclosebtn.addEventListener("click",()=>{
+    rdialog.close();
+})
+
 export {addproject};
