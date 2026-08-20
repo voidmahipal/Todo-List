@@ -1,18 +1,3 @@
-*,*::before,*::after{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-button{
-    border: 0;
-}
-button:hover{
-    cursor: pointer;
-}
-body{
-    font-family: "Inter",sans-serif;
-    background-color: #10141B;
-}
 .sidebar{
     width: 20%;
     height: 100vh;
@@ -64,6 +49,10 @@ body{
     justify-content: space-between;
     align-items: center;
     gap: 15px;
+}
+.pcard:hover{
+    background-color: #21252E;
+    cursor: pointer;
 }
 .pinfo,.pbuttons{
     display: flex;

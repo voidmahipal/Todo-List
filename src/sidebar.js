@@ -1,3 +1,5 @@
+import {addprojectinfo,addNewTaskButton} from "./main.js";
+
 const colors = ["red","blue","yellow","green","purple","orange","pink","white"];
 let i=0;
 function getColor() {
@@ -59,6 +61,11 @@ function addproject(name) {
         const card = e.currentTarget.closest(".pcard");
         container.removeChild(card);
     })
+
+    card.addEventListener("click",()=>{
+        addprojectinfo(svg.style.fill,h3.textContent);
+        addNewTaskButton(svg.style.fill);
+    })
 }
 
 function takeprojname() {
@@ -86,4 +93,5 @@ rclosebtn.addEventListener("click",()=>{
     rdialog.close();
 })
 
+addproject("Personal");
 export {addproject};
