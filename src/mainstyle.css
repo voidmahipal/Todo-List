@@ -1,6 +1,9 @@
 main{
     padding: 15px;
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 main header{
     padding: 10px;
@@ -34,4 +37,46 @@ main header{
     width: 25px;
     height: 25px;
     fill: white;
+}
+.taskcontainer,.completedcontainer{
+    padding: 10px;
+    border: 1px solid #2A2F3A;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.taskcontainer h2,.completedcontainer{
+    color: white;
+}
+.taskcard{
+    padding: 10px;
+    height: 50px;
+    border: 1px solid #2A2F3A;
+    color: white;
+    display: flex;
+    gap: 10px;
+}
+.taskcard:hover{
+    background-color: #21252E;
+    cursor: pointer;
+}
+.taskcheckbox{
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #8b8f9a;
+    border-radius: 50%;
+}
+.taskcheckbox:checked{
+    background-color: #8b4de8;
+    border-color: #8b4de8;
+}
+.taskcheckbox:hover{
+    cursor: pointer;
+}
+.taskcheckbox:checked::after{
+    padding: 1px;  
+    content: "✓";
+    font-size: 18px;
+    font-weight: bold;
 }
