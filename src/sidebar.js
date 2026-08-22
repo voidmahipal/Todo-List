@@ -1,4 +1,4 @@
-import {addprojectinfo,addNewTaskButton} from "./main.js";
+import {addprojectinfo,addNewTaskButton,showTask} from "./main.js";
 
 const colors = ["red","blue","yellow","green","purple","orange","pink","white"];
 let i=0;
@@ -21,6 +21,15 @@ const rdialog = document.querySelector(".renameproject");
 const rclosebtn = document.querySelector(".renameproject button");
 const rform = document.querySelector(".renameproject form");
 const rnameinform = document.querySelector("#rname");
+
+
+class project{
+    constructor(name) {
+        this.name=name;
+        this.task=[];
+    }
+}
+const projectlist=[];
 
 
 function addproject(name) {
@@ -64,8 +73,15 @@ function addproject(name) {
 
     card.addEventListener("click",()=>{
         addprojectinfo(svg.style.fill,h3.textContent);
-        addNewTaskButton(svg.style.fill);
+        addNewTaskButton(svg.style.fill,name);
+        showTask(name);
     })
+    addtoprojectlist(name);
+}
+
+function addtoprojectlist(name) {
+    let projectObj = new project(name);
+    projectlist.push(projectObj);
 }
 
 function takeprojname() {
@@ -94,4 +110,4 @@ rclosebtn.addEventListener("click",()=>{
 })
 
 addproject("Personal");
-export {addproject};
+export {addproject,projectlist};
